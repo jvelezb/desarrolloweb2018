@@ -1,0 +1,14 @@
+.alumno{
+	padding : 20 px;
+	background: #343434 ;
+	color:#e4e4e4e4;
+	border-radius: 10px;
+	margin-bottom:5px;
+
+}
+
+.carga-alumno{
+	background: red;
+	padding: 10 px;
+	margin: 5px;
+}

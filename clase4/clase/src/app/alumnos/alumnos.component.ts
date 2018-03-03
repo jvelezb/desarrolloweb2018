@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
-export class Alumno{
-		nombre: String;
-		matricula : String;
-		carrera: String;
-}
+import {AlumnosService} from  '../service/alumnos.service';
+import {Alumno}  from '../serviceObjects/alumno';
 
 @Component({
   selector: 'app-alumnos-tec',
   templateUrl: './alumnos.component.html',
-  styleUrls: ['./alumnos.component.css']
+  styleUrls: ['./alumnos.component.css'],
+  providers:[AlumnosService]
 })
 
 export class AlumnosComponent implements OnInit {
@@ -24,16 +21,11 @@ export class AlumnosComponent implements OnInit {
 
 	
 
-  constructor() { 
+  constructor(private alumnoService : AlumnosService) { 
   	this.director="Leopoldo";
   	this.escuela="CCM";
 
-  	let alumno1 :  Alumno ={
-	  	nombre: "Juan Velez",
-			matricula : "123123",
-			carrera: "ITC"
-  	};
-  	this.alumnos = [alumno1];
+  	 this.alumnos = alumnoService.obtenerAlumnos();
      this.modeloNombre = '';
      this.modeloCarrera = '';
      this.modeloMatricula ='';
