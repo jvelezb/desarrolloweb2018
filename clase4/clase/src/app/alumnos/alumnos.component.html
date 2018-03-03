@@ -1,0 +1,21 @@
+<li *ngFor="let alumno of alumnos">
+	<span> <b>Nombre: </b>{{alumno.nombre}} </span>
+   <span> <b>Matricula:</b> {{alumno.matricula}}</span>
+   <span> <b>Carrera:</b>{{alumno.carrera}}</span>
+</li>
+
+<hr>
+
+<label>{{modeloNombre}}</label>
+<div>
+	<input type = "text" [(ngModel)]="modeloNombre" placeholder ="ingresa el nombre"/>
+</div>
+<label>{{modeloMatricula}}</label>
+<div>
+	<input type = "text" [(ngModel)]="modeloMatricula" placeholder ="ingresa el Matricula"/>
+</div>
+<label>{{modeloCarrera}}</label>
+<div>
+	<input type = "text" [(ngModel)]="modeloCarrera" placeholder ="ingresa el carrera"/>
+</div>
+<button (click)="crearAlumno()">crear</button>
