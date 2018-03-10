@@ -9,7 +9,7 @@ export class AlumnosService {
  grupo: Alumno[] = [	
 	 {nombre: "Juan",
 			matricula :"A94343",
-			carrera: "ITC",
+			carrera: "ITC"
 		},
 		{nombre: "Pedro",
 			matricula :"A6453825",

@@ -19,10 +19,14 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
-      ],
-      "scripts": [],
+        "sass/estilos.scss",
+        "../node_modules/bootstrap/scss/bootstrap.scss"
+        ],
+         "stylePreprocessorOptions":{
+          "includePaths":["../node_modules/bootstrap/scss"]
+
+      },
+       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -55,7 +59,16 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "component": {
+    }
   }
 }
+
+
+
+
+
+
+
+

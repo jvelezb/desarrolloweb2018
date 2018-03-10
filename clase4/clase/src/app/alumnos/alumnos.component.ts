@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AlumnosService} from  '../service/alumnos.service';
 import {Alumno}  from '../serviceObjects/alumno';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-alumnos-tec',
@@ -21,7 +22,8 @@ export class AlumnosComponent implements OnInit {
 
 	
 
-  constructor(private alumnoService : AlumnosService) { 
+  constructor(private alumnoService : AlumnosService,
+    private router: Router) { 
   	this.director="Leopoldo";
   	this.escuela="CCM";
 
@@ -45,6 +47,9 @@ export class AlumnosComponent implements OnInit {
     this.modeloNombre = '';
     this.modeloMatricula ='';
     this.modeloCarrera = '';
+  }
+  detalle (matricula){
+     this.router.navigate(['detalle',matricula]);
   }
 
 
