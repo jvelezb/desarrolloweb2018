@@ -1,39 +1,24 @@
 import { Injectable } from '@angular/core';
-
-import {Alumno} from '../serviceObjects/alumno'
-
+import {Http} from '@angular/http';
+import {Alumno} from '../serviceObjects/alumno';
+import 'rx/add/operator/map';
 
 @Injectable()
 export class AlumnosService {
 
- grupo: Alumno[] = [	
-	 {nombre: "Juan",
-			matricula :"A94343",
-			carrera: "ITC"
-		},
-		{nombre: "Pedro",
-			matricula :"A6453825",
-			carrera: "ITC",
-		},
-			{nombre: "Alvaro",
-		matricula :"787657876567",
-		carrera: "LIN",
-		}
- ];
 
 
-  constructor() { }
+  constructor(private _http:Http) { }
 
-  obtenerAlumnos():Alumno[]{
-  		return this.grupo;
+  obtenerAlumnos(_stringBusqueda):Alumno[]{
+  		let lista = this._http.get("https://api.github.com/search/users?q="+_stringBusqueda) as Object;
+  		console.log(lista);
+
+  		return [];
   }
 
   detalleAlumno(matricula):Alumno{
-  	for (var i =0; i<this.grupo.length; i++){
-  		if(this.grupo[i].matricula=== matricula){
-  				return this.grupo[i];
-  		}
-  	}
+  	
   	return null;
   }
 

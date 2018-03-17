@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AlumnosService} from  '../service/alumnos.service';
 import {Alumno}  from '../serviceObjects/alumno';
 import {Router, ActivatedRoute} from '@angular/router';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
   selector: 'app-alumnos-tec',
@@ -16,6 +17,7 @@ export class AlumnosComponent implements OnInit {
   modeloNombre: String;
   modeloCarrera: String;
   modeloMatricula: String ='';
+  modeloBusquedaNombre:String = '';
 	director: String;
 	escuela: String;
 	alumnos: Alumno[];
@@ -27,7 +29,7 @@ export class AlumnosComponent implements OnInit {
   	this.director="Leopoldo";
   	this.escuela="CCM";
 
-  	 this.alumnos = alumnoService.obtenerAlumnos();
+  	 this.alumnos = alumnoService.obtenerAlumnos(this.modeloBusquedaNombre);
      this.modeloNombre = '';
      this.modeloCarrera = '';
      this.modeloMatricula ='';
