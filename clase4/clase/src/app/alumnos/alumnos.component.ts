@@ -3,6 +3,12 @@ import {AlumnosService} from  '../service/alumnos.service';
 import {Alumno}  from '../serviceObjects/alumno';
 import {Router, ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs/Rx';
+import { FormControl } from '@angular/forms'; 
+
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+
 
 @Component({
   selector: 'app-alumnos-tec',
@@ -21,6 +27,8 @@ export class AlumnosComponent implements OnInit {
 	director: String;
 	escuela: String;
 	alumnos: Alumno[];
+  busquedaControl = new FormControl();
+
 
 	
 
@@ -29,7 +37,6 @@ export class AlumnosComponent implements OnInit {
   	this.director="Leopoldo";
   	this.escuela="CCM";
 
-  	 this.alumnos = alumnoService.obtenerAlumnos(this.modeloBusquedaNombre);
      this.modeloNombre = '';
      this.modeloCarrera = '';
      this.modeloMatricula ='';
@@ -37,6 +44,17 @@ export class AlumnosComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.busquedaControl.valueChanges
+      .filter(text => text.length >= 3)
+      .debounceTime(500)
+      .distinctUntilChanged()
+      .subscribe(value=>{
+        console.log(value);
+         this.alumnoService.obtenerAlumnos(value)
+         .subscribe(data =>{
+           this.alumnos = data.items;
+         })
+      });
   }
 
   crearAlumno(){

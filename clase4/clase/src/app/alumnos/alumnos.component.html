@@ -1,15 +1,15 @@
 
 
 
-  <input class="form-control" type="search" 
-[formControl]="buscarAlumnos">  
+  <input  type="search" 
+[formControl]="busquedaControl">  
 
 <div class="fila" *ngFor="let alumno of alumnos">
 	
-		<div class="nombre">  <b>Nombre: </b>{{alumno.nombre}} </div>
-   <div class="matricula"> <b>Matricula:</b> {{alumno.matricula}}</div>
-   <div class="carrera"> <b>Carrera:</b>{{alumno.carrera}}</div>
-   <div class="boton" > <button class="btn btn-primary" (click)="detalle(alumno.matricula)">detalle</button></div>
+		<div class="nombre">  <b>Nombre: </b>{{alumno.login}} </div>
+   <div class="matricula"> <b>Matricula:</b> {{alumno.followers_url}}</div>
+   <div class="carrera"> <b>Carrera:</b>{{alumno.score}}</div>
+   <div class="boton" > <button class="btn btn-primary" (click)="detalle(alumno.gravatar_id)">detalle</button></div>
  
 </div>
 
