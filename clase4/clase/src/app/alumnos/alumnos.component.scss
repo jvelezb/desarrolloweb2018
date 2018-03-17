@@ -1,0 +1,39 @@
+
+@import 'bootstrap';
+
+.fila{
+	@extend .row;
+	@extend .container-fluid;
+}
+
+.nombre{
+	@extend .col-md-3;
+	padding : 20 px;
+	background: blue ;
+	color:#e4e4e4e4;
+	border-radius: 10px;
+	margin-bottom:5px;
+	@extend .col-sm-4;
+
+}
+.matricula{
+	@extend .col-md-2;
+	@extend .col-sm-4;
+}
+.carrera{
+	@extend .col-md-3;
+	@extend .d-sm-none;
+	@extend .d-md-block;
+}
+.boton{
+	@extend .col-md-4;
+	@extend .col-sm-4;
+}
+
+
+
+.carga-alumno{
+	background: grey;
+	padding: 10 px;
+	margin: 5px;
+}

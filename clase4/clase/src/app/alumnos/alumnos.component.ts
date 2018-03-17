@@ -6,7 +6,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-alumnos-tec',
   templateUrl: './alumnos.component.html',
-  styleUrls: ['./alumnos.component.css'],
+  styleUrls: ['./alumnos.component.scss'],
   providers:[AlumnosService]
 })
 
