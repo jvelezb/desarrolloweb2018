@@ -13,7 +13,7 @@
     },
     "semestre": {
       "type": "number",
-      "required": true,
+      "required": false,
       "default": 0
     }
   },
