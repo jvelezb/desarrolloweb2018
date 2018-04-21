@@ -10,7 +10,7 @@ import {Alumno} from '../serviceObjects/alumno';
 })
 export class DetalleComponent implements OnInit {
 
-	matricula: String;
+	cualquiercosa: String;
 	alumno : Alumno;
 
   constructor(
@@ -19,7 +19,8 @@ export class DetalleComponent implements OnInit {
   	private service: AlumnosService) { }
 
   ngOnInit() {
-  	this.matricula = this.route.snapshot.paramMap.get('matricula');
+  	this.cualquiercosa = this.route.snapshot.paramMap.get('barberia');
+    console.log(this.cualquiercosa);
   	this.alumno = this.service.detalleAlumno(this.matricula);
   }
 

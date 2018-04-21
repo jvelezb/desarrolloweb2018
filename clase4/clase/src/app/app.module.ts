@@ -9,13 +9,15 @@ import {AlumnosService} from './service/alumnos.service';
 import { AppComponent } from './app.component';
 import { AlumnosComponent } from './alumnos/alumnos.component';
 import { DetalleComponent } from './detalle/detalle.component';
+import { ProfesorComponent } from './profesor/profesor.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AlumnosComponent,
-    DetalleComponent
+    DetalleComponent,
+    ProfesorComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +35,13 @@ import { DetalleComponent } from './detalle/detalle.component';
 				component: AlumnosComponent,
 			},
 			{
-				path:'detalle/:matricula',
+				path:'cita/:barberia',
 				component:DetalleComponent
-			}
+			},
+      {
+        path:'profesor',
+        component: ProfesorComponent
+      }
     	])
   ],
   providers: [AlumnosService],

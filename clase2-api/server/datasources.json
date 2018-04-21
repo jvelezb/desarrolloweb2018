@@ -1,0 +1,12 @@
+{
+  "miConexion": {
+    "host": "ds157078.mlab.com",
+    "port": 57078,
+    "url": "",
+    "database": "jvelezb_web_tec",
+    "password": "tvbl6u1m",
+    "name": "miConexion",
+    "user": "juanvelez",
+    "connector": "mongodb"
+  }
+}

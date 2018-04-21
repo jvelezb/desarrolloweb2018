@@ -18,13 +18,10 @@ export class AlumnosService {
 
   detalleAlumno(matricula):Alumno{
   	
-  	return null;
+  	return new Alumno{
+  		matricula = matricula
+  	};
   }
-
-
-
-
-
 
 
 

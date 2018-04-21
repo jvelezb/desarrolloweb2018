@@ -68,8 +68,9 @@ export class AlumnosComponent implements OnInit {
     this.modeloMatricula ='';
     this.modeloCarrera = '';
   }
-  detalle (matricula){
-     this.router.navigate(['detalle',matricula]);
+  detalle (login){
+       console.log(login);
+     this.router.navigate(['detalle',login]);
   }
 
 
