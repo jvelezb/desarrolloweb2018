@@ -1,0 +1,42 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "miConexion"
+  },
+  "AccessToken": {
+    "dataSource": "miConexion",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "miConexion",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "miConexion",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "miConexion",
+    "public": false
+  },
+  "Producto": {
+    "dataSource": "miConexion",
+    "public": true
+  }
+}
